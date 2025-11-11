@@ -1,0 +1,5 @@
+{
+  "name": "College Canteen E-Commerce",
+  "description": "A mini e-commerce website for a college canteen, allowing students to order food and admins to manage the menu and orders. This is a frontend-only demonstration using React, mocking all backend interactions.",
+  "requestFramePermissions": []
+}
