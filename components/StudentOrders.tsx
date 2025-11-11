@@ -1,38 +1,39 @@
+
 import React, { useState, useEffect } from 'react';
 import { Order, OrderStatus } from '../types';
 import { mockApi } from '../services/mockApi';
 
 const getStatusColor = (status: OrderStatus) => {
   switch (status) {
-    case OrderStatus.PENDING: return 'bg-yellow-100 text-yellow-800';
-    case OrderStatus.PREPARING: return 'bg-blue-100 text-blue-800';
-    case OrderStatus.DELIVERED: return 'bg-green-100 text-green-800';
-    case OrderStatus.CANCELLED: return 'bg-red-100 text-red-800';
-    default: return 'bg-gray-100 text-gray-800';
+    case OrderStatus.PENDING: return 'bg-amber-100 text-amber-800';
+    case OrderStatus.PREPARING: return 'bg-indigo-100 text-indigo-800';
+    case OrderStatus.DELIVERED: return 'bg-teal-100 text-teal-800';
+    case OrderStatus.CANCELLED: return 'bg-rose-100 text-rose-800';
+    default: return 'bg-slate-100 text-slate-800';
   }
 };
 
 const OrderCard: React.FC<{ order: Order }> = ({ order }) => (
-  <div className="bg-white rounded-lg shadow-md p-6 mb-4">
-    <div className="flex flex-wrap justify-between items-start mb-4">
+  <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+    <div className="flex flex-wrap justify-between items-start mb-4 gap-2">
         <div>
-            <h3 className="text-lg font-bold text-gray-800">Order #{order.id}</h3>
-            <p className="text-sm text-gray-500">{order.date.toLocaleString()}</p>
+            <h3 className="text-xl font-bold text-slate-800">Order <span className="text-blue-600">#{order.id}</span></h3>
+            <p className="text-sm text-slate-500">{order.date.toLocaleString()}</p>
         </div>
-        <span className={`px-3 py-1 text-sm font-semibold rounded-full ${getStatusColor(order.status)}`}>
+        <span className={`px-4 py-1 text-sm font-semibold rounded-full ${getStatusColor(order.status)}`}>
             {order.status}
         </span>
     </div>
-    <div className="border-t border-gray-200 pt-4">
+    <div className="border-t border-slate-200 pt-4 space-y-2">
       {order.items.map(item => (
-        <div key={item.id} className="flex justify-between items-center text-sm mb-2">
-          <span>{item.name} x {item.quantity}</span>
-          <span className="text-gray-600">₹{(item.price * item.quantity).toFixed(2)}</span>
+        <div key={item.id} className="flex justify-between items-center text-sm">
+          <span className="text-slate-700">{item.name} <span className="text-slate-500">x {item.quantity}</span></span>
+          <span className="text-slate-600 font-medium">₹{(item.price * item.quantity).toFixed(2)}</span>
         </div>
       ))}
     </div>
-    <div className="border-t border-gray-200 mt-4 pt-4 text-right">
-      <span className="text-lg font-bold text-gray-800">Total: ₹{order.total.toFixed(2)}</span>
+    <div className="border-t border-slate-200 mt-4 pt-4 flex justify-end items-center">
+      <span className="text-lg font-bold text-slate-800">Total: <span className="text-blue-600">₹{order.total.toFixed(2)}</span></span>
     </div>
   </div>
 );
@@ -58,9 +59,12 @@ const StudentOrders: React.FC<{ userId: string }> = ({ userId }) => {
 
   return (
     <div>
-      <h2 className="text-3xl font-bold text-gray-800 mb-6">My Orders</h2>
+      <h2 className="text-4xl font-bold text-slate-800 mb-8">My Orders</h2>
       {orders.length === 0 ? (
-        <p className="text-gray-600">You haven't placed any orders yet.</p>
+        <div className="text-center py-16 bg-white rounded-lg shadow-md">
+            <p className="text-slate-600 text-lg">You haven't placed any orders yet.</p>
+            <p className="text-slate-500 mt-2">Why not check out the menu?</p>
+        </div>
       ) : (
         orders.map(order => <OrderCard key={order.id} order={order} />)
       )}

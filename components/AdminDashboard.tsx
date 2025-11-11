@@ -10,16 +10,16 @@ const AdminDashboard: React.FC = () => {
 
   return (
     <div>
-      <h2 className="text-3xl font-bold text-gray-800 mb-6">Admin Dashboard</h2>
-      <div className="mb-6 border-b border-gray-200">
+      <h2 className="text-4xl font-bold text-slate-800 mb-8">Admin Dashboard</h2>
+      <div className="mb-8 border-b border-slate-200">
         <nav className="-mb-px flex space-x-8" aria-label="Tabs">
           <button
             onClick={() => setActiveTab('orders')}
             className={`${
               activeTab === 'orders'
-                ? 'border-indigo-500 text-indigo-600'
-                : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-            } whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm`}
+                ? 'border-blue-500 text-blue-600'
+                : 'border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300'
+            } whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg`}
           >
             Manage Orders
           </button>
@@ -27,9 +27,9 @@ const AdminDashboard: React.FC = () => {
             onClick={() => setActiveTab('menu')}
             className={`${
               activeTab === 'menu'
-                ? 'border-indigo-500 text-indigo-600'
-                : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-            } whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm`}
+                ? 'border-blue-500 text-blue-600'
+                : 'border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300'
+            } whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg`}
           >
             Manage Menu
           </button>

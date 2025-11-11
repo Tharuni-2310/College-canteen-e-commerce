@@ -1,3 +1,4 @@
+
 import React, { useState, useCallback } from 'react';
 import { User, UserRole, CartItem, MenuItem } from './types';
 import { mockApi } from './services/mockApi';
@@ -84,7 +85,7 @@ const App: React.FC = () => {
 
   const renderContent = () => {
     if (!currentUser) {
-        return <Login onLogin={handleLogin} isLoading={isLoading} />;
+        return null;
     }
 
     if (currentUser.role === UserRole.ADMIN) {
@@ -101,9 +102,13 @@ const App: React.FC = () => {
         return <Menu onAddToCart={handleAddToCart} />;
     }
   };
+  
+  if (!currentUser) {
+    return <Login onLogin={handleLogin} isLoading={isLoading} />;
+  }
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="flex flex-col min-h-screen bg-slate-100">
       <Header
         currentUser={currentUser}
         onLogout={handleLogout}
@@ -111,13 +116,11 @@ const App: React.FC = () => {
         onNavigate={setView}
         onPlaceOrder={handlePlaceOrder}
         onUpdateCart={handleUpdateCart}
+        currentView={view}
       />
-      <main className="flex-grow container mx-auto p-4 md:p-6">
+      <main className="flex-grow container mx-auto p-6 md:p-10">
         {renderContent()}
       </main>
-      <footer className="bg-gray-800 text-white text-center p-4">
-        © 2024 College Canteen. All rights reserved.
-      </footer>
     </div>
   );
 };

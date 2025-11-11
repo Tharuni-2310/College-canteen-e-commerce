@@ -1,12 +1,12 @@
 import { MenuItem, Order, OrderStatus, CartItem, User, UserRole } from '../types';
 
-const idlyImage = 'https://images.pexels.com/photos/8695679/pexels-photo-8695679.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1';
-const dosaImage = 'https://images.pexels.com/photos/5560763/pexels-photo-5560763.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1';
-const puriImage = 'https://images.pexels.com/photos/10360057/pexels-photo-10360057.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1';
-const parathaImage = 'https://images.pexels.com/photos/4518731/pexels-photo-4518731.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1';
-const vegFriedRiceImage = 'https://images.pexels.com/photos/1092730/pexels-photo-1092730.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1';
+const idlyImage = 'https://www.shutterstock.com/image-photo/south-indian-breakfast-food-idli-260nw-2464099789.jpg';
+const dosaImage = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQO8owQcHu1csisSyh9hXKZ1f7eWK2hmbp7ZQ&s';
+const puriImage = 'https://paattiskitchen.com/wp-content/uploads/2023/01/kmc_20230129_200720-1.jpg';
+const parathaImage = 'https://i.ytimg.com/vi/3rkXplTcAOA/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLA3BM4CTpDfbe7QkBOZ57UiSiu2uQ';
+const vegFriedRiceImage = 'https://www.whiskaffair.com/wp-content/uploads/2018/11/Vegetable-Fried-Rice-2-3.jpg';
 const chickenFriedRiceImage = 'https://images.pexels.com/photos/3926124/pexels-photo-3926124.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1';
-const thaliImage = 'https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1';
+const thaliImage = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwC8BOnLaIOlFanP6huhEl-AbEGRaWprb_gA&s';
 
 const STUDENT_USER = { id: 'student1', email: 'student@college.com', role: UserRole.STUDENT, password: 'password123' };
 const ADMIN_USER = { id: 'admin1', email: 'admin@college.com', role: UserRole.ADMIN, password: 'adminpassword' };

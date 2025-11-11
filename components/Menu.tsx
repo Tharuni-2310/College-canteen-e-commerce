@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { MenuItem } from '../types';
 import { mockApi } from '../services/mockApi';
@@ -9,21 +10,23 @@ interface MenuItemCardProps {
 
 const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, onAddToCart }) => {
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-1 transition-transform duration-300">
-      <img src={item.imageUrl} alt={item.name} className="w-full h-48 object-cover" />
-      <div className="p-4">
-        <h3 className="text-lg font-semibold text-gray-800">{item.name}</h3>
-        <p className="text-sm text-gray-500">{item.category}</p>
-        <div className="mt-4 flex justify-between items-center">
-          <span className="text-xl font-bold text-indigo-600">₹{item.price.toFixed(2)}</span>
-          <button
-            onClick={() => onAddToCart(item)}
-            disabled={!item.available}
-            className="px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded-md hover:bg-indigo-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
-          >
-            {item.available ? 'Add to Cart' : 'Unavailable'}
-          </button>
+    <div className="bg-white rounded-xl shadow-lg overflow-hidden transform hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 group flex flex-col">
+      <div className="relative">
+        <img src={item.imageUrl} alt={item.name} className="w-full h-48 object-cover" />
+        <div className="absolute top-3 right-3 bg-blue-500 text-white font-bold py-1 px-3 rounded-full text-sm shadow-md">
+            ₹{item.price.toFixed(2)}
         </div>
+      </div>
+      <div className="p-5 flex-grow flex flex-col">
+        <h3 className="text-lg font-semibold text-slate-800 truncate flex-grow">{item.name}</h3>
+        <p className="text-sm text-slate-500 mb-4">{item.category}</p>
+        <button
+          onClick={() => onAddToCart(item)}
+          disabled={!item.available}
+          className="w-full py-2.5 bg-blue-600 text-white text-sm font-semibold rounded-lg hover:bg-blue-700 disabled:bg-slate-300 disabled:cursor-not-allowed transition-colors"
+        >
+          {item.available ? 'Add to Cart' : 'Unavailable'}
+        </button>
       </div>
     </div>
   );
@@ -50,8 +53,8 @@ const Menu: React.FC<{ onAddToCart: (item: MenuItem) => void }> = ({ onAddToCart
 
   return (
     <div>
-      <h2 className="text-3xl font-bold text-gray-800 mb-6">Our Menu</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <h2 className="text-4xl font-bold text-slate-800 mb-8">Today's Menu</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
         {menuItems.map(item => (
           <MenuItemCard key={item.id} item={item} onAddToCart={onAddToCart} />
         ))}
