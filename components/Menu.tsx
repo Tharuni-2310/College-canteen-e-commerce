@@ -13,7 +13,7 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, onAddToCart }) => {
     <div className="bg-white rounded-xl shadow-lg overflow-hidden transform hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 group flex flex-col">
       <div className="relative">
         <img src={item.imageUrl} alt={item.name} className="w-full h-48 object-cover" />
-        <div className="absolute top-3 right-3 bg-blue-500 text-white font-bold py-1 px-3 rounded-full text-sm shadow-md">
+        <div className="absolute top-3 right-3 bg-teal-500 text-white font-bold py-1 px-3 rounded-full text-sm shadow-md">
             ₹{item.price.toFixed(2)}
         </div>
       </div>
@@ -23,7 +23,7 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, onAddToCart }) => {
         <button
           onClick={() => onAddToCart(item)}
           disabled={!item.available}
-          className="w-full py-2.5 bg-blue-600 text-white text-sm font-semibold rounded-lg hover:bg-blue-700 disabled:bg-slate-300 disabled:cursor-not-allowed transition-colors"
+          className="w-full py-2.5 bg-teal-600 text-white text-sm font-semibold rounded-lg hover:bg-teal-700 disabled:bg-slate-300 disabled:cursor-not-allowed transition-colors"
         >
           {item.available ? 'Add to Cart' : 'Unavailable'}
         </button>

@@ -24,11 +24,11 @@ const Login: React.FC<LoginProps> = ({ onLogin, isLoading }) => {
           src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=2070&auto=format&fit=crop"
           alt="Delicious food spread"
         />
-        <div className="absolute inset-0 bg-blue-900 bg-opacity-40"></div>
+        <div className="absolute inset-0 bg-teal-900 bg-opacity-40"></div>
         <div className="absolute inset-0 flex items-end p-12">
             <div className="text-white">
                 <h1 className="text-5xl font-extrabold tracking-tight">The Hungry Hub</h1>
-                <p className="mt-2 text-lg text-blue-100">Your campus food destination.</p>
+                <p className="mt-2 text-lg text-teal-100">Your campus food destination.</p>
             </div>
         </div>
       </div>
@@ -50,7 +50,7 @@ const Login: React.FC<LoginProps> = ({ onLogin, isLoading }) => {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm placeholder-slate-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                  className="mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm placeholder-slate-400 focus:outline-none focus:ring-teal-500 focus:border-teal-500"
                   placeholder="you@college.com"
                   required
                   autoComplete="email"
@@ -63,7 +63,7 @@ const Login: React.FC<LoginProps> = ({ onLogin, isLoading }) => {
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm placeholder-slate-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                  className="mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm placeholder-slate-400 focus:outline-none focus:ring-teal-500 focus:border-teal-500"
                   placeholder="••••••••"
                   required
                   autoComplete="current-password"
@@ -72,7 +72,7 @@ const Login: React.FC<LoginProps> = ({ onLogin, isLoading }) => {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:bg-blue-300 transition-colors"
+                className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 disabled:bg-teal-300 transition-colors"
               >
                 {isLoading ? 'Logging in...' : 'Login'}
               </button>

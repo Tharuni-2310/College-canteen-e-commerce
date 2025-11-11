@@ -92,7 +92,7 @@ const AdminOrders: React.FC = () => {
                                             <select
                                                 value={order.status}
                                                 onChange={(e) => handleStatusChange(order.id, e.target.value as OrderStatus)}
-                                                className={`p-1.5 rounded-md border text-xs font-semibold ${getStatusColor(order.status)} border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer`}
+                                                className={`p-1.5 rounded-md border text-xs font-semibold ${getStatusColor(order.status)} border-transparent focus:outline-none focus:ring-2 focus:ring-teal-500 cursor-pointer`}
                                             >
                                                 {Object.values(OrderStatus).map(status => (
                                                     <option key={status} value={status} className="bg-white text-slate-800">{status}</option>

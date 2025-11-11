@@ -74,7 +74,7 @@ const CartPopover: React.FC<{
             <span>Total:</span>
             <span>₹{total}</span>
           </div>
-          <button onClick={onPlaceOrder} className="w-full bg-blue-600 text-white py-2.5 rounded-lg hover:bg-blue-700 transition-colors font-semibold">
+          <button onClick={onPlaceOrder} className="w-full bg-teal-600 text-white py-2.5 rounded-lg hover:bg-teal-700 transition-colors font-semibold">
             Place Order
           </button>
         </div>
@@ -94,8 +94,8 @@ const Header: React.FC<HeaderProps> = ({ currentUser, onLogout, cartItems, onNav
     const navLinkClasses = (view: View) => 
         `px-4 py-2 rounded-md font-medium transition-colors ${
             currentView === view 
-            ? 'bg-blue-100 text-blue-700' 
-            : 'text-slate-600 hover:bg-blue-50 hover:text-blue-700'
+            ? 'bg-teal-100 text-teal-700' 
+            : 'text-slate-600 hover:bg-teal-50 hover:text-teal-700'
         }`;
 
     if (currentUser.role === UserRole.ADMIN) {
@@ -121,7 +121,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser, onLogout, cartItems, onNav
   return (
     <header className="bg-white shadow-md sticky top-0 z-10">
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 className="text-3xl font-extrabold text-blue-600 cursor-pointer" onClick={() => onNavigate(currentUser?.role === UserRole.ADMIN ? 'ADMIN_DASHBOARD' : 'MENU')}>
+            <h1 className="text-3xl font-extrabold text-teal-600 cursor-pointer" onClick={() => onNavigate(currentUser?.role === UserRole.ADMIN ? 'ADMIN_DASHBOARD' : 'MENU')}>
                 The Hungry Hub
             </h1>
             
@@ -132,10 +132,10 @@ const Header: React.FC<HeaderProps> = ({ currentUser, onLogout, cartItems, onNav
             <div className="flex items-center space-x-6">
                 {currentUser?.role === UserRole.STUDENT && (
                     <div className="relative">
-                        <button onClick={() => setIsCartOpen(!isCartOpen)} className="relative text-slate-600 hover:text-blue-600">
+                        <button onClick={() => setIsCartOpen(!isCartOpen)} className="relative text-slate-600 hover:text-teal-600">
                             <ShoppingCartIcon />
                             {cartItemCount > 0 && (
-                            <span className="absolute -top-2 -right-2 bg-blue-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-bold">{cartItemCount}</span>
+                            <span className="absolute -top-2 -right-2 bg-teal-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-bold">{cartItemCount}</span>
                             )}
                         </button>
                         {isCartOpen && <CartPopover cartItems={cartItems} onPlaceOrder={onPlaceOrder} onUpdateCart={onUpdateCart} onClose={() => setIsCartOpen(false)} />}
@@ -144,7 +144,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser, onLogout, cartItems, onNav
                 {currentUser && (
                     <div className="flex items-center space-x-2">
                         <span className="text-sm text-slate-600 hidden sm:block">{currentUser.email}</span>
-                        <button onClick={onLogout} className="text-sm font-medium text-blue-600 hover:text-blue-800 border border-blue-500 px-3 py-1.5 rounded-md hover:bg-blue-50 transition-colors">
+                        <button onClick={onLogout} className="text-sm font-medium text-teal-600 hover:text-teal-800 border border-teal-500 px-3 py-1.5 rounded-md hover:bg-teal-50 transition-colors">
                             Logout
                         </button>
                     </div>

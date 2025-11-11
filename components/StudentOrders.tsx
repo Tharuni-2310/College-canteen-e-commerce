@@ -17,7 +17,7 @@ const OrderCard: React.FC<{ order: Order }> = ({ order }) => (
   <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
     <div className="flex flex-wrap justify-between items-start mb-4 gap-2">
         <div>
-            <h3 className="text-xl font-bold text-slate-800">Order <span className="text-blue-600">#{order.id}</span></h3>
+            <h3 className="text-xl font-bold text-slate-800">Order <span className="text-teal-600">#{order.id}</span></h3>
             <p className="text-sm text-slate-500">{order.date.toLocaleString()}</p>
         </div>
         <span className={`px-4 py-1 text-sm font-semibold rounded-full ${getStatusColor(order.status)}`}>
@@ -33,7 +33,7 @@ const OrderCard: React.FC<{ order: Order }> = ({ order }) => (
       ))}
     </div>
     <div className="border-t border-slate-200 mt-4 pt-4 flex justify-end items-center">
-      <span className="text-lg font-bold text-slate-800">Total: <span className="text-blue-600">₹{order.total.toFixed(2)}</span></span>
+      <span className="text-lg font-bold text-slate-800">Total: <span className="text-teal-600">₹{order.total.toFixed(2)}</span></span>
     </div>
   </div>
 );
